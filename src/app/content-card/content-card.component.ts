@@ -37,7 +37,7 @@ const pianist3 : Content = {
 export class ContentCardComponent {
   contentLists = new ContentList();
 
-  constructor () {
+  ngOnInit () {
     this.contentLists.addContent(pianist1);
     this.contentLists.addContent(pianist2);
     this.contentLists.addContent(pianist3);
