@@ -1,0 +1,7 @@
+<div>
+  This is content card component
+  <div *ngFor="let content of contentLists.getContentList(); index as i">
+    <div [innerHTML]="contentLists.generateHtmlByIndex(i)"></div>
+    <hr>
+  </div>
+</div>

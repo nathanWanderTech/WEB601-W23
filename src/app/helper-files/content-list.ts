@@ -1,6 +1,6 @@
 import { Content } from "./content-interface";
 
-class ContentList {
+export class ContentList {
 	private contentList: Content[];
 
 	constructor() {
@@ -37,9 +37,11 @@ class ContentList {
     const content : Content | undefined = this.contentList[index];
     if(!content) return '';
     
-    return `<p>Title: ${content.title}</p>
+    return `<div><p>Title: ${content.title}</p>
     <p>Description: ${content.description}</p>
     <p>Creator: ${content.creator}</p>
-    <p>Image: <img src="${content.imgURL}" alt=""></p>`
+    <p>Type: ${content.type}</p>
+    <p>Image: <img src="${content.imgURL}" alt="${content.title}"></p>
+    </div>`
   }
 }
