@@ -1,7 +1,10 @@
-<div>
-  This is content card component
-  <div *ngFor="let content of contentLists.getContentList(); index as i">
-    <div [innerHTML]="contentLists.generateHtmlByIndex(i)"></div>
-    <hr>
+<div class="card {{isFirst && 'first'}}">
+  <img *ngIf="content?.imgURL" src="{{content?.imgURL}}" alt="Avatar" (click)="handleClickImage(content)">
+  <div class="container">
+    <h4><b>{{content?.title}}</b></h4> 
+    <p>Description: {{content?.description}}</p> 
+		<p>Creator: {{content?.creator}}</p>
+		<p *ngIf="content?.type">Type: {{content?.type}}</p>
+    <p *ngIf="content?.tags">Tag: <span class="tag" *ngFor="let tag of content?.tags">{{tag}}</span></p>
   </div>
 </div>
