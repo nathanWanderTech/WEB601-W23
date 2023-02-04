@@ -1,11 +1,15 @@
-<div>
-  <span>Search title (which is pianist's name): </span> <input type="text"> 
-  <button>Search</button>
-</div>
+<form>
+  <label>Search title (which is pianist's name): </label>
+  <input type="text" [(ngModel)]="searchFormObject.title" name="title">
+  <button type="submit">Search</button>
+</form>
 <br>
-<div>
-  Result: 
-</div>
+
+<p>search value: {{searchFormObject.title}} </p>
+<p>Result:</p>
+<blockquote>
+  <p>\fsfdsfsdf</p>
+</blockquote>
 
 
 <h2>Type Classic:</h2>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Content } from '../helper-files/content-interface';
 
 const pianist1: Content = {
@@ -84,7 +85,10 @@ const pianist7: Content = {
 })
 export class ContentListComponent {
 	contentList: Content[] = [];
-	searchTitle: string = '';
+
+	searchFormObject = {
+		title: '',
+	};
 
 	ngOnInit() {
 		this.contentList = [pianist1, pianist2, pianist3, pianist4, pianist5, pianist6, pianist7];
