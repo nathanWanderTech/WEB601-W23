@@ -1,32 +1,37 @@
 <form>
   <label>Search title (which is pianist's name): </label>
   <input type="text" [(ngModel)]="searchFormObject.title" name="title">
-  <button type="submit">Search</button>
+  <button type="button" (click)="handleSearch()">Search</button>
 </form>
 <br>
 
-<p>search value: {{searchFormObject.title}} </p>
-<p>Result:</p>
-<blockquote>
-  <p>\fsfdsfsdf</p>
-</blockquote>
+<div *ngIf="applySearch">
+  <div *ngIf="(contentList|searchContent:applySearch).total != 0; else notFoundBlock">
+    <p class="found">Result: Found {{(contentList|searchContent:applySearch).total}}</p>
+    <blockquote>
+      <ul>
+        <li *ngFor="let item of (contentList|searchContent:applySearch).results">{{item.title}}</li>
+      </ul>
+    </blockquote>
+  </div>
+
+  <ng-template #notFoundBlock>
+    <p class="not-found">Not found</p>
+  </ng-template>
+</div>
 
 
 <h2>Type Classic:</h2>
 <div class="content-list-container">
   <app-content-card *ngFor="let item of contentList|filterByType:'Classic'; first as isFirst" [content]="item"
     [isFirst]="isFirst" class="type-classic"></app-content-card>
-
-
 </div>
+
 <h2>Type Jazz:</h2>
 <div class="content-list-container">
   <app-content-card *ngFor="let item of contentList|filterByType:'Jazz'; first as isFirst" [content]="item"
     [isFirst]="isFirst" class="type-jazz"></app-content-card>
-
-
 </div>
-
 
 <h2>No type:</h2>
 <div class="content-list-container">

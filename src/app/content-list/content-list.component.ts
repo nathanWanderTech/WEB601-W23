@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Content } from '../helper-files/content-interface';
+import { SearchContent } from '../helper-files/search-content-interface';
 
 const pianist1: Content = {
 	id: 1,
@@ -85,12 +86,17 @@ const pianist7: Content = {
 })
 export class ContentListComponent {
 	contentList: Content[] = [];
+	applySearch: SearchContent | null = null;
 
-	searchFormObject = {
+	searchFormObject: SearchContent = {
 		title: '',
 	};
 
 	ngOnInit() {
 		this.contentList = [pianist1, pianist2, pianist3, pianist4, pianist5, pianist6, pianist7];
+	}
+
+	handleSearch() {
+		this.applySearch = {...this.searchFormObject};
 	}
 }
