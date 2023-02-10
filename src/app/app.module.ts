@@ -8,6 +8,7 @@ import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { FilterByTypePipe } from './filter-by-type.pipe';
 import { SearchContentPipe } from './search-content.pipe';
+import { HoverAffectDirective } from './hover-affect.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SearchContentPipe } from './search-content.pipe';
     ContentCardComponent,
     ContentListComponent,
     FilterByTypePipe,
-    SearchContentPipe
+    SearchContentPipe,
+    HoverAffectDirective
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { Content } from '../helper-files/content-interface';
 import { SearchContent } from '../helper-files/search-content-interface';
 
@@ -51,8 +50,7 @@ const pianist5: Content = {
 	description:
 		'A Chinese pianist who has performed with leading orchestras in China, North America, Europe, and elsewhere.',
 	creator: 'His mom and dad',
-	imgURL:
-		'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Lang_Lang_-_World_Economic_Forum_Annual_Meeting_2010_Davos_cropped.jpg/220px-Lang_Lang_-_World_Economic_Forum_Annual_Meeting_2010_Davos_cropped.jpg',
+	imgURL: '',
 	type: 'Classic',
 };
 
@@ -73,8 +71,6 @@ const pianist7: Content = {
 	description:
 		'Frédéric François Chopin was a Polish composer and virtuoso pianist of the Romantic period in his generation',
 	creator: 'His mom and dad',
-	imgURL:
-		'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Frederic_Chopin_photo.jpeg/220px-Frederic_Chopin_photo.jpeg',
 	type: 'Classic',
 	tags: ['Pianist'],
 };
@@ -97,6 +93,6 @@ export class ContentListComponent {
 	}
 
 	handleSearch() {
-		this.applySearch = {...this.searchFormObject};
+		this.applySearch = { ...this.searchFormObject };
 	}
 }

@@ -10,6 +10,8 @@ export class ContentCardComponent {
   @Input() isFirst: boolean = false;
 	@Input() content: Content | undefined;
 
+	defaultImageUrl = 'https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png'; // random image
+
 	handleClickImage(content?: Content) {
 		if (!content) return console.log('No content');
 

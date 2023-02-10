@@ -33,3 +33,21 @@
 .first {
   border: 2px solid black
 }
+
+.default-image {
+  position: relative;
+
+  img {
+    height: 285px;
+  }
+
+  &::after {
+    content: 'Default image';
+    color: grey;
+    font-size: 24px;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    left: 0;
+  }
+}
