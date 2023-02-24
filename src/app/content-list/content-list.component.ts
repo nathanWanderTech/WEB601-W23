@@ -95,4 +95,8 @@ export class ContentListComponent {
 	handleSearch() {
 		this.applySearch = { ...this.searchFormObject };
 	}
+
+	parentAddNewItem(newContent: Content) {
+		this.contentList = [...this.contentList, newContent]
+	}
 }
