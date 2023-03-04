@@ -1,13 +1,13 @@
-<app-create-content (addNewContentEvent)="parentAddNewItem($event)"></app-create-content>
+<!-- <app-create-content (addNewContentEvent)="parentAddNewItem($event)"></app-create-content> -->
 
-<br>
+<!-- <br>
 
 <form>
   <label>Search title (which is pianist's name): </label>
   <input type="text" [(ngModel)]="searchFormObject.title" name="title">
   <button type="button" (click)="handleSearch()">Search</button>
 </form>
-<br>
+<br> -->
 
 <div *ngIf="applySearch">
   <div *ngIf="(contentList|searchContent:applySearch).total != 0; else notFoundBlock">

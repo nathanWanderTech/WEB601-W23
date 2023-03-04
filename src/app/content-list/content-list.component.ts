@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { contentList } from '../helper-files/contentDb';
 import { SearchContent } from '../helper-files/search-content-interface';
+import { PianistService } from '../services/pianist.service';
 
 @Component({
 	selector: 'app-content-list',
@@ -16,8 +17,12 @@ export class ContentListComponent {
 		title: '',
 	};
 
+	constructor(private pianistService: PianistService) {}
+
 	ngOnInit() {
-		this.contentList = contentList;
+		this.pianistService.getPianists().subscribe((pianistList) => {
+			return (this.contentList = pianistList);
+		});
 	}
 
 	handleSearch() {
