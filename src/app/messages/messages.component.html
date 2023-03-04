@@ -1,1 +1,8 @@
-<p>messages works!</p>
+<div class="segment">
+  <h2>Messages</h2>
+  <div class="message" *ngIf="messageService.messages.length">
+    <div *ngFor='let message of messageService.messages'> {{message}} </div>
+  </div>
+  <button type="button" class="clear" (click)="messageService.clear()">Clear messages</button>
+</div>
+<br>

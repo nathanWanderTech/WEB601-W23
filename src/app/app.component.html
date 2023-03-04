@@ -1,16 +1,11 @@
+<h1>Home page</h1>
+
 <!-- ASSIGNMENT 6 -->
-
-<div *ngIf="findById(3)" >
-  <app-content-card [content]="findById(3)" style="box-shadow: 3px 3px 3px 3px red; display: block; width: 300px;" ></app-content-card>
-</div>
-
-
+<app-messages></app-messages>
+<app-content-card [content]="findById(3)"
+  style="box-shadow: 3px 3px 3px 3px red; display: block; width: 300px;"></app-content-card>
 <!-- END ASSIGNMENT 6 -->
 
 
-<h1>Home page</h1>
 <app-content-list></app-content-list>
-
-
-
 <router-outlet></router-outlet>

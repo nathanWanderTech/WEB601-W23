@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { contentList } from '../helper-files/contentDb';
 import { SearchContent } from '../helper-files/search-content-interface';
+import { MessageService } from '../services/message.service';
 import { PianistService } from '../services/pianist.service';
 
 @Component({
@@ -17,10 +18,11 @@ export class ContentListComponent {
 		title: '',
 	};
 
-	constructor(private pianistService: PianistService) {}
+	constructor(private pianistService: PianistService, private messageService: MessageService) {}
 
 	ngOnInit() {
 		this.pianistService.getPianists().subscribe((pianistList) => {
+			this.messageService.add('Content array loaded!');
 			return (this.contentList = pianistList);
 		});
 	}
