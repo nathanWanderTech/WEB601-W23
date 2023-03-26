@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { validateCreateNewContent } from 'src/utils/validation';
+import { validateCreateNewContent } from '../../utils/validation';
 
 import { Content } from '../helper-files/content-interface';
 
