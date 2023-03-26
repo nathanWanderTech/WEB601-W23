@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
-import { contentList } from '../helper-files/contentDb';
 import { SearchContent } from '../helper-files/search-content-interface';
 import { MessageService } from '../services/message.service';
 import { PianistService } from '../services/pianist.service';
@@ -23,7 +22,7 @@ export class ContentListComponent {
 	ngOnInit() {
 		this.pianistService.getPianists().subscribe((pianistList) => {
 			this.messageService.add('Content array loaded!');
-			return (this.contentList = pianistList);
+			return (this.contentList = [...pianistList]);
 		});
 	}
 
@@ -33,5 +32,12 @@ export class ContentListComponent {
 
 	parentAddNewItem(newContent: Content) {
 		this.contentList = [...this.contentList, newContent];
+	}
+
+	addContentToList(newContent: Content) {
+		this.pianistService.addContent(newContent).subscribe((newContentFromServer) => {
+			this.contentList = [...this.contentList, newContentFromServer];
+			this.messageService.add(`New pianist ID ${newContentFromServer.id} name ${newContentFromServer.title} added`);
+		});
 	}
 }

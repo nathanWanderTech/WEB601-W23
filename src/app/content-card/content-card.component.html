@@ -9,7 +9,7 @@
 
 
   <div class="container">
-    <h4><b>{{content?.title}}</b></h4> 
+    <h4>ID: {{content?.id}} - <b>{{content?.title}}</b></h4> 
     <p>Description: {{content?.description}}</p> 
 		<p>Creator: {{content?.creator}}</p>
 		<p *ngIf="content?.type" appHoverAffect [affectName]="'underline'">Type: {{content?.type}}</p>

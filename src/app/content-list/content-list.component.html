@@ -8,8 +8,11 @@
   <button type="button" (click)="handleSearch()">Search</button>
 </form>
 <br> -->
+<hr>
+<h1>CONTENT LIST COMPONENT</h1>
+<app-modify-content-component (addNewContentEvent)="addContentToList($event)"></app-modify-content-component>
 
-<div *ngIf="applySearch">
+<!-- <div *ngIf="applySearch">
   <div *ngIf="(contentList|searchContent:applySearch).total != 0; else notFoundBlock">
     <p class="found">Result: Found {{(contentList|searchContent:applySearch).total}}</p>
     <blockquote>
@@ -22,7 +25,7 @@
   <ng-template #notFoundBlock>
     <p class="not-found">Not found</p>
   </ng-template>
-</div>
+</div> -->
 
 
 <h2>Type Classic:</h2>
