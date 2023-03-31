@@ -6,7 +6,8 @@ import { Content } from './helper-files/content-interface';
 })
 export class FilterByTypePipe implements PipeTransform {
 	transform(contentList: Content[], type?: string): Content[] {
-		if (type == null) return contentList.filter((item) => item.type == null);;
+		console.log(contentList)
+		if (type == null) return contentList.filter((item) => item.type == null || item.type == '');;
 
 		return contentList.filter((item) => item.type == type);
 	}

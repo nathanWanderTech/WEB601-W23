@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Content } from '../helper-files/content-interface';
+import { ModifyContentFormComponent } from '../modify-content-form/modify-content-form.component';
 
 @Component({
 	selector: 'app-modify-content-component',
@@ -7,36 +9,30 @@ import { Content } from '../helper-files/content-interface';
 	styleUrls: ['./modify-content-component.component.scss'],
 })
 export class ModifyContentComponentComponent {
+	constructor(private dialog: MatDialog) {}
 	@Output() addNewContentEvent = new EventEmitter<Content>();
 
-	id: number | null = null;
-	title: string | null = null;
-	description: string | null = null;
-	creator: string | null = null;
-	imgURL: string | null = null;
-	type: string | null = null;
-	tags: string | null = null;
+	openDialog() {
+		const dialogConfig = new MatDialogConfig();
 
-	resetForm() {
-		this.id = null;
-		this.title = null;
-		this.description = null;
-		this.creator = null;
-		this.imgURL = null;
-		this.type = null;
-		this.tags = null;
+		const dialogRef = this.dialog.open(ModifyContentFormComponent, dialogConfig);
+		dialogConfig.autoFocus = true;
+
+		dialogRef.afterClosed().subscribe((data) => {
+			const newContent: Content = {
+				...data,
+				imgURL:
+					data.imgURL === '' || data.imgURL == null
+						? 'https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png'
+						: data.imgURL,
+				tags: data.tags ? data.tags.split(',') : [],
+			};
+			console.log('Dialog output:', newContent);
+			this.handleSave(newContent);
+		});
 	}
 
-	handleSubmit() {
-		const newContent: any = {
-			title: this.title,
-			description: this.description,
-			creator: this.creator,
-			imgURL: this.imgURL,
-			type: this.type,
-			tags: this.tags ? this.tags.split(',') : [],
-		};
+	handleSave(newContent: Content) {
 		this.addNewContentEvent.emit(newContent);
-		this.resetForm();
 	}
 }

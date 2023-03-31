@@ -1,0 +1,73 @@
+@use "@angular/material" as mat;
+@include mat.core();
+
+$cong-nha-le-palette: (
+  50 : #e6f9fd,
+  100 : #c2f1fb,
+  200 : #99e8f9,
+  300 : #70def6,
+  400 : #51d7f4,
+  500 : #32d0f2,
+  600 : #2dcbf0,
+  700 : #26c4ee,
+  800 : #1fbeec,
+  900 : #13b3e8,
+  A100 : #ffffff,
+  A200 : #e4f8ff,
+  A400 : #b1eaff,
+  A700 : #97e3ff,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$cong-nha-le-palette-accent: (
+    50 : #f1fbfe,
+    100 : #dbf6fc,
+    200 : #c4f0fa,
+    300 : #aceaf7,
+    400 : #9ae6f6,
+    500 : #88e1f4,
+    600 : #80ddf3,
+    700 : #75d9f1,
+    800 : #6bd5ef,
+    900 : #58cdec,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #eafaff,
+    A700 : #d0f5ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$my-primary: mat.define-palette($cong-nha-le-palette, 700, 300, 900);
+$my-accent: mat.define-palette($cong-nha-le-palette-accent, A200, A100, A400);
+
+$my-theme: mat.define-light-theme((color: (primary: $my-primary, accent: $my-accent)));
+@include mat.all-component-themes($my-theme);

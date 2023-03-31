@@ -1,0 +1,53 @@
+<h2 mat-dialog-title>Add pianist</h2>
+<mat-dialog-content>
+  <form [formGroup]="form">
+
+    <mat-form-field>
+      <mat-label>ID</mat-label>
+      <input matInput id="id" name="id" value="ID will be auto generated" disabled>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Title *</mat-label>
+      <input matInput id="title" name="title" formControlName="title">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Description *</mat-label>
+      <input matInput id="description" name="description" formControlName="description">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Creator *</mat-label>
+      <input matInput id="creator" name="creator" formControlName="creator">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Image link</mat-label>
+      <input matInput id="imgURL" name="imgURL" formControlName="imgURL">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <mat-select name="type" id="type" formControlName="type">
+        <mat-option value="Classic">Classic</mat-option>
+        <mat-option value="Jazz">Jazz</mat-option>
+        <mat-option value="">No type</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tags</mat-label>
+      <input matInput id="tags" name="tags" placeholder="Tag A, Tag B" formControlName="tags">
+    </mat-form-field>
+
+    <mat-dialog-actions>
+      <button mat-raised-button color="secondary" (click)="close()">Close</button>
+      <button mat-raised-button color="primary" (click)="save()">Save</button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>
