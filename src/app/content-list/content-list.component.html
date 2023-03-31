@@ -30,17 +30,26 @@
 
 <h2>Type Classic:</h2>
 <div class="content-list-container">
+  <div *ngIf="contentList.length == 0">
+    <mat-spinner></mat-spinner>
+  </div>
   <app-content-card *ngFor="let item of contentList|filterByType:'Classic'; first as isFirst" [content]="item"
     [isFirst]="isFirst" class="type-classic"></app-content-card>
 </div>
 
 <h2>Type Jazz:</h2>
+<div *ngIf="contentList.length == 0">
+  <mat-spinner></mat-spinner>
+</div>
 <div class="content-list-container">
   <app-content-card *ngFor="let item of contentList|filterByType:'Jazz'; first as isFirst" [content]="item"
     [isFirst]="isFirst" class="type-jazz"></app-content-card>
 </div>
 
 <h2>No type:</h2>
+<div *ngIf="contentList.length == 0">
+  <mat-spinner></mat-spinner>
+</div>
 <div class="content-list-container">
   <app-content-card *ngFor="let item of contentList|filterByType; first as isFirst" [content]="item" [isFirst]="isFirst"
     class="no-type"></app-content-card>

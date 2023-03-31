@@ -21,6 +21,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModifyContentFormComponent } from './modify-content-form/modify-content-form.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
 	declarations: [
@@ -33,7 +37,7 @@ import { ModifyContentFormComponent } from './modify-content-form/modify-content
 		CreateContentComponent,
 		MessagesComponent,
 		ModifyContentComponentComponent,
-  ModifyContentFormComponent,
+		ModifyContentFormComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -50,6 +54,10 @@ import { ModifyContentFormComponent } from './modify-content-form/modify-content
 		MatInputModule,
 		MatSelectModule,
 		MatDialogModule,
+		MatCardModule,
+		MatChipsModule,
+		MatTooltipModule,
+		MatProgressSpinnerModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

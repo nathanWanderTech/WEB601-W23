@@ -1,4 +1,4 @@
-<div class="card {{isFirst && 'first'}}">
+<!-- <div class="card {{isFirst && 'first'}}">
   <img *ngIf="content?.imgURL; else defaultImage" src="{{content?.imgURL}}" alt="Avatar" (click)="handleClickImage(content)">
   <ng-template #defaultImage>
     <div class="default-image">
@@ -16,4 +16,23 @@
     <p *ngIf="content?.tags">Tag: <span class="tag" *ngFor="let tag of content?.tags" appHoverAffect [affectName]="'boldText'">{{tag}}</span></p>
   </div>
 
-</div>
+</div> -->
+
+<mat-card class="card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{content?.title}}</mat-card-title>
+    <mat-card-subtitle>ID: {{content?.id}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{content?.imgURL == null || content?.imgURL == '' ? defaultImageUrl : content?.imgURL}}"
+    alt="Avatar" (click)="handleClickImage(content)" matTooltip="Photo of {{content?.title}}" matTooltipPosition="above">
+  <mat-card-content>
+    <p>{{content?.description}}</p>
+    <mat-chip-listbox *ngIf="content?.tags">
+      <mat-chip-option color="accent" *ngFor="let tag of content?.tags" disabled>{{tag}}</mat-chip-option>
+    </mat-chip-listbox>
+  </mat-card-content>
+  <mat-card-actions>
+
+  </mat-card-actions>
+</mat-card>
