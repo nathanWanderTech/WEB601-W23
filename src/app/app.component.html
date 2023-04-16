@@ -1,4 +1,21 @@
-<h1>Home page</h1>
+<nav>
+  <ul>
+    <li>
+      <a routerLink="list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Content List
+      </a>
+    </li>
+    <li>
+      <a routerLink="list/6" routerLinkActive="active">Content ID 6</a>
+    </li>
+    <li>
+      <a routerLink="pagewillnotbefound" routerLinkActive="active">
+        Invalid page link
+      </a>
+    </li>
+  </ul>
+</nav>
+
 
 <!-- ASSIGNMENT 6 -->
 <app-messages></app-messages>
@@ -6,5 +23,6 @@
 <!-- END ASSIGNMENT 6 -->
 
 
-<app-content-list></app-content-list>
+<!-- Move content list out -->
+<!-- <app-content-list></app-content-list> -->
 <router-outlet></router-outlet>

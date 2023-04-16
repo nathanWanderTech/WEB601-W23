@@ -25,6 +25,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
 	declarations: [
@@ -38,6 +40,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 		MessagesComponent,
 		ModifyContentComponentComponent,
 		ModifyContentFormComponent,
+		ContentDetailComponent,
+		PageNotFoundComponent,
 	],
 	imports: [
 		BrowserModule,

@@ -1,0 +1,13 @@
+<section>
+  <h2>ID {{content?.id}}: {{content?.title}}</h2>
+  <hr>
+  <div class="body">
+    <img src="{{content?.imgURL == null || content?.imgURL == '' ? defaultImageUrl : content?.imgURL}}" alt="image">
+    <div>
+      <p><b>Description</b>: {{content?.description}}</p>
+      <mat-chip-listbox *ngIf="content?.tags">
+        <mat-chip-option color="accent" *ngFor="let tag of content?.tags" disabled>{{tag}}</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+  </div>
+</section>

@@ -1,7 +1,7 @@
 <div class="segment">
   <h2>Messages</h2>
   <div class="message" *ngIf="messageService.messages.length">
-    <div *ngFor='let message of messageService.messages'> {{message}} </div>
+    <div *ngFor='let message of messageService.messages'> {{message}} <hr></div>
   </div>
   <button mat-raised-button color="primary" (click)="messageService.clear()">
     Clear messages
