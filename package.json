@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "http-server -p 8080 -c-1 dist/con-le-web601-assignments-pianist",
+    "start:server": "http-server -p 8080 -c-1 dist/con-le-web601-assignments-pianist",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -23,7 +24,9 @@
     "@angular/platform-browser": "^15.1.0",
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
+    "@angular/service-worker": "^15.1.0",
     "angular-in-memory-web-api": "^0.15.0",
+    "http-server": "^14.1.1",
     "rxjs": "~7.8.0",
     "schematics-scss-migrate": "^2.3.17",
     "tslib": "^2.3.0",
@@ -31,7 +34,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.1.1",
-    "@angular/cli": "~15.1.1",
+    "@angular/cli": "^15.2.6",
     "@angular/compiler-cli": "^15.1.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",
