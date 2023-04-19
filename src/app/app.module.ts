@@ -25,9 +25,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { SnackBarNotificationComponent } from './snack-bar-notification/snack-bar-notification.component';
 
 @NgModule({
 	declarations: [
@@ -43,6 +45,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 		ModifyContentFormComponent,
 		ContentDetailComponent,
 		PageNotFoundComponent,
+
+		SnackBarNotificationComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -63,12 +67,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 		MatChipsModule,
 		MatTooltipModule,
 		MatProgressSpinnerModule,
-  ServiceWorkerModule.register('ngsw-worker.js', {
-    enabled: !isDevMode(),
-    // Register the ServiceWorker as soon as the application is stable
-    // or after 30 seconds (whichever comes first).
-    registrationStrategy: 'registerWhenStable:30000'
-  }),
+		MatSnackBarModule,
+		ServiceWorkerModule.register('ngsw-worker.js', {
+			enabled: !isDevMode(),
+			// Register the ServiceWorker as soon as the application is stable
+			// or after 30 seconds (whichever comes first).
+			registrationStrategy: 'registerWhenStable:30000',
+		}),
 	],
 	providers: [],
 	bootstrap: [AppComponent],

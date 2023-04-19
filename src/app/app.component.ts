@@ -1,5 +1,4 @@
-import { ApplicationRef, Component } from '@angular/core';
-import { SwUpdate } from '@angular/service-worker';
+import {  Component } from '@angular/core';
 import { Content } from './helper-files/content-interface';
 import { LogUpdateService } from './log-update.service';
 import { MessageService } from './services/message.service';
@@ -16,9 +15,7 @@ export class AppComponent {
 	constructor(
 		private pianistService: PianistService,
 		private messageService: MessageService,
-		private logService: LogUpdateService,
-		private updates: SwUpdate,
-		private appRef: ApplicationRef
+		private logService: LogUpdateService
 	) {}
 
 	ngOnInit(): void {
